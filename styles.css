@@ -1,136 +1,104 @@
-/* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #030712, #0b1730);
-    overflow: hidden;
-    color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #030712, #0b1730);
+  overflow: hidden;
+  color: white;
 }
 
-/* ===== BACKGROUND GLOW ===== */
+/* BACKGROUND GLOW */
 .bg-blur {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: rgba(0,153,255,0.25);
-    filter: blur(120px);
-    border-radius: 50%;
-    animation: floatGlow 8s ease-in-out infinite;
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: rgba(0,153,255,0.25);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: floatGlow 8s ease-in-out infinite;
 }
+@keyframes floatGlow { 0%,100% { transform: translate(0,0);} 50% { transform: translate(40px,-30px); } }
 
-@keyframes floatGlow {
-    0%,100% { transform: translate(0,0); }
-    50% { transform: translate(40px,-30px); }
-}
-
-/* ===== MAIN CONTAINER ===== */
+/* CONTAINER */
 .container {
-    width: 90%;
-    max-width: 550px;
-    padding: 30px;
-    text-align: center;
-
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    animation: fadeUp 1s ease;
+  width: 90%;
+  max-width: 550px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  animation: fadeUp 1s ease;
 }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-/* ===== PROFILE PICTURE ===== */
-.pfp-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 18px;
-}
-
+/* PFP */
+.pfp-wrapper { display: flex; justify-content: center; margin-bottom: 18px; }
 .pfp {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    border: 2px solid rgba(255,255,255,0.25);
-    box-shadow: 0 0 20px rgba(0,153,255,0.35);
-
-    transition: transform 0.3s ease;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 20px rgba(0,153,255,0.35);
+  transition: transform 0.3s ease;
 }
+.pfp:hover { transform: scale(1.08) rotate(3deg); }
 
-.pfp:hover {
-    transform: scale(1.08) rotate(3deg);
+/* TEXT */
+.title { font-size: 2rem; margin-bottom: 12px; }
+.about { opacity: 0.85; line-height: 1.6; margin-bottom: 20px; }
+
+/* SOCIAL ICONS */
+.social-icons { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%) brightness(1.2);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+.social-icons a:hover img { transform: scale(1.2); filter: invert(60%) sepia(100%) saturate(500%) hue-rotate(200deg); }
 
-/* ===== TEXT ===== */
-.title {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.about {
-    opacity: 0.85;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* ===== LIQUID GLASS BUTTON ===== */
+/* BUTTON */
 .liquid-button {
-    padding: 14px 28px;
-    border: none;
-    border-radius: 14px;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-
 .liquid-button:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 0 25px rgba(0,153,255,0.5);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0,153,255,0.5);
 }
 
-/* ===== CERTIFICATE ===== */
+/* CERTIFICATE */
 #certificateImg {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 18px;
-
-    display: none;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.5s ease;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 18px;
+  display: none;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
 }
-
 #certificateImg.show {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
+  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
-
-#statusText {
-    margin-top: 12px;
-    opacity: 0.8;
-    font-size: 0.9rem;
-}
+#statusText { margin-top: 12px; opacity: 0.8; font-size: 0.9rem; }
