@@ -22,7 +22,10 @@ body {
   border-radius: 50%;
   animation: floatGlow 8s ease-in-out infinite;
 }
-@keyframes floatGlow { 0%,100% { transform: translate(0,0);} 50% { transform: translate(40px,-30px); } }
+@keyframes floatGlow {
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(40px,-30px); }
+}
 
 /* CONTAINER */
 .container {
@@ -56,15 +59,23 @@ body {
 .title { font-size: 2rem; margin-bottom: 12px; }
 .about { opacity: 0.85; line-height: 1.6; margin-bottom: 20px; }
 
-/* SOCIAL ICONS */
-.social-icons { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+/* SOCIAL ICONS - SMALLER */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
 .social-icons a img {
-  width: 28px;
-  height: 28px;
+  width: 22px;  /* smaller size */
+  height: 22px;
   filter: invert(100%) brightness(1.2);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-.social-icons a:hover img { transform: scale(1.2); filter: invert(60%) sepia(100%) saturate(500%) hue-rotate(200deg); }
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: invert(60%) sepia(100%) saturate(500%) hue-rotate(200deg);
+}
 
 /* BUTTON */
 .liquid-button {
